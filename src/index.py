@@ -1,11 +1,14 @@
 from model import model
+from loader import load_data
+from fastai.vision.all import PILImage
 
 
-def bird_predictor(image):
-    learner = model("downloads")
-    is_bird, _, probs = learner.predict(image)
-    print(f"This is a: {is_bird}.")
-    print(f"Probability it's a bird: {probs[0]:.4f}")
+def image_classifier(image):
+    dls = load_data("data/trainers")
+    learner = model(dls)
+    prediction, _, probs = learner.predict(PILImage.create(image))
+    print(f"This is a: {prediction}.")
+    print(f"Confidence level: {probs[0]:.4f}")
 
 
-bird_predictor("./test-images/2.jpg")
+image_classifier("./data/validators/croc-1.jpg")

@@ -8,4 +8,4 @@ def bird_predictor(image):
     print(f"Probability it's a bird: {probs[0]:.4f}")
 
 
-bird_predictor("test-images/12.jpg")
+bird_predictor("./test-images/2.jpg")

@@ -1,5 +1,4 @@
 from model import model
-from fastai.vision.all import PILImage
 
 
 def bird_predictor(image):
@@ -10,4 +9,3 @@ def bird_predictor(image):
 
 
 bird_predictor("test-images/12.jpg")
-# bird_predictor("downloads/forests/0e1134f5-5e9a-489a-a8cd-067da4ab907b.jpg")
